@@ -1,0 +1,26 @@
+[
+  {
+    "sagesyntaxacademy'": "sagesyntaxacademy'",
+    "BuildingExcellence@111'": "'BuildingExcellence@111'"
+  },
+  {
+    "sagesyntaxacademy'": "sagesyntaxacademy'",
+    "BuildingExcellence@111'": "'BuildingExcellence@111'"
+  },
+  {
+    "sagesyntaxacademy'": "sagesyntaxacademy'",
+    "BuildingExcellence@111'": "'BuildingExcellence@111'"
+  }
+]
+{
+  userName: 'sagesyntaxacademy',
+  password: 'BuildingExcellence@111',
+  BaseURL: 'https://automationpracticehub.com/'
+}
+[20/10/2026, 12:51:39 pm] [INFO] Properties file is read...
+[20/10/2026, 12:51:40 pm] [INFO] [object Object]
+[20/10/2026, 12:51:40 pm] [INFO] goto.....
+[20/10/2026, 12:51:46 pm] [INFO] username is entered
+[20/10/2026, 12:51:51 pm] [INFO] password is entered
+[20/10/2026, 12:51:56 pm] [INFO] login button clicked
+Automation Practice Hub : A Sage Syntax Academy's product

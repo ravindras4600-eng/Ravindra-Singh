@@ -1,0 +1,6 @@
+[]
+{
+  userName: 'sagesyntaxacademy',
+  password: 'BuildingExcellence@111',
+  BaseURL: 'https://automationpracticehub.com/'
+}

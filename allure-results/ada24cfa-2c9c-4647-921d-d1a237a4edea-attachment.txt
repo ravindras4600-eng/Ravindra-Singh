@@ -1,0 +1,6 @@
+[]
+{
+  userName: 'abc',
+  password: 'abcpassword',
+  BaseURL: 'https://automationpracticehub.com/'
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "import xlsx from 'xlsx'": "import path from 'path'",
+    __EMPTY: '//this is inbuilt inside node.js'
+  },
+  { "import xlsx from 'xlsx'": 'export class ExcelReader {' },
+  {
+    "import xlsx from 'xlsx'": '    static readExcelFile(filename, sheetname) {'
+  },
+  {
+    "import xlsx from 'xlsx'": '        //we are defining the path of the file'
+  },
+  {
+    "import xlsx from 'xlsx'": "        const filePath = path.join(__dirname, '../data', filename)"
+  },
+  { "import xlsx from 'xlsx'": '        //read excel file' },
+  {
+    "import xlsx from 'xlsx'": '        const workbook = xlsx.readFile(filePath)'
+  },
+  { "import xlsx from 'xlsx'": '        //get the sheetname' },
+  {
+    "import xlsx from 'xlsx'": '        const worksheet = workbook.Sheets[sheetname]'
+  },
+  {
+    "import xlsx from 'xlsx'": '        //convert the sheet into json'
+  },
+  {
+    "import xlsx from 'xlsx'": '        const xlsxToJson = xlsx.utils.sheet_to_json(worksheet)'
+  },
+  { "import xlsx from 'xlsx'": '        return xlsxToJson' },
+  { "import xlsx from 'xlsx'": '    }' },
+  { "import xlsx from 'xlsx'": '}' }
+]
+Automation Practice Hub : A Sage Syntax Academy's product

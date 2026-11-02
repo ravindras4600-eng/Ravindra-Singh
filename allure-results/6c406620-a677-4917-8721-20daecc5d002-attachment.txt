@@ -1,0 +1,7 @@
+[]
+{
+  userName: 'sagesyntaxacademy',
+  password: 'BuildingExcellence@111',
+  BaseURL: 'https://automationpracticehub.com/'
+}
+Automation Practice Hub : A Sage Syntax Academy's product

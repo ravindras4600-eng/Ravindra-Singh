@@ -1,0 +1,13 @@
+[]
+{
+  userName: 'sagesyntaxacademy',
+  password: 'BuildingExcellence@111',
+  BaseURL: 'https://automationpracticehub.com/'
+}
+[19/10/2026, 12:19:53 pm] [INFO] Properties file is read...
+[19/10/2026, 12:19:53 pm] [INFO] [object Object]
+[19/10/2026, 12:19:55 pm] [INFO] goto.....
+[19/10/2026, 12:20:01 pm] [INFO] username is entered
+[19/10/2026, 12:20:06 pm] [INFO] password is entered
+[19/10/2026, 12:20:11 pm] [INFO] login button clicked
+Automation Practice Hub : A Sage Syntax Academy's product

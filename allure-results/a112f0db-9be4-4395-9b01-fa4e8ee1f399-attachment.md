@@ -1,0 +1,82 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: basics.spec.js >> login
+- Location: tests\basics.spec.js:8:5
+
+# Error details
+
+```
+ReferenceError: Cannot access 'Date' before initialization
+```
+
+# Test source
+
+```ts
+  1  | import fs from 'fs';
+  2  | import path from 'path';
+  3  | 
+  4  | export class logger {
+  5  |     static getlogfile() {
+  6  |         //create logs directory
+  7  |         const logDirectory = path.join(process.cwd(), 'logs');
+  8  | 
+  9  |         if (!fs.existsSync(logDirectory)) {
+  10 |             fs.mkdirSync(logDirectory, { recursive: true });
+  11 |         }
+  12 |         //Get today,s date
+> 13 |         const today = new Date();
+     |                       ^ ReferenceError: Cannot access 'Date' before initialization
+  14 |         const year = today.getFullYear();
+  15 |         const month = String(today.getMonth() + 1).padStart(2, '0');
+  16 |         const day = String(today.getDate()).padStart(2, '0');
+  17 |         const Date = `${year}-${month}-${day}`;
+  18 |         //create today's log file name
+  19 |         const LogFileName = `execution-${Date}.log`;
+  20 |         return path.join(logDirectory, LogFileName);
+  21 | 
+  22 | 
+  23 |     }
+  24 |     static write(level, message) {
+  25 |         //Get today,s log file
+  26 |         const logfile = this.getlogfile();
+  27 | 
+  28 |         //Current timestamp
+  29 |         const timestamp = new Date().toLocaleString();
+  30 | 
+  31 |         //create log message
+  32 |         const logMessage =
+  33 |             `[${timestamp}] [${Level}] ${message}\n`;
+  34 | 
+  35 |         //Append to today,s log file
+  36 |         fs.appendFileSync(logfile, logMessage);
+  37 | 
+  38 |         //Also Print in console
+  39 |         console.log(logMessage.trim());
+  40 |     }
+  41 | 
+  42 | 
+  43 | 
+  44 |     static info(message) {
+  45 |         this.write('INFO', message);
+  46 |     }
+  47 | 
+  48 |     static debug(message) {
+  49 |         this.write('DEBUG', message);
+  50 |     }
+  51 | 
+  52 |     static warn(message) {
+  53 |         this.write('WARN', message);
+  54 |     }
+  55 | 
+  56 |     static error(message) {
+  57 |         this.write('ERROR', message);
+  58 |     }
+  59 | }
+  60 | 
+```

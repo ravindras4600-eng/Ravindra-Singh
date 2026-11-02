@@ -1,0 +1,71 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: basics.spec.js >> login
+- Location: tests\basics.spec.js:8:5
+
+# Error details
+
+```
+TypeError: Cannot read properties of undefined (reading 'info')
+```
+
+# Test source
+
+```ts
+  1  | import { test } from '@playwright/test';
+  2  | import { expect } from '@playwright/test';
+  3  | import { userData } from '../data/userData';
+  4  | import { ExcelReader } from '../utils/ExcelReader.js';
+  5  | import { PropertyReader } from '../utils/propertyReader.js';
+  6  | import { Logger } from '../utils/logger.js';
+  7  | 
+  8  | test('login', async ({ page }) => {
+  9  |     //fixture: Ready to- use setup provided by playwright for a test
+  10 |     //browser
+  11 |     //context
+  12 |     //page
+  13 |     //const context=await browser.newcontext();
+  14 |     //const page=await contaxt.newpage();
+  15 | 
+  16 |     const exceluserData = ExcelReader.readExcelFile('userData.xlsx', 'Sheet1');
+  17 |     console.log(exceluserData);
+  18 | 
+  19 | 
+  20 |     //to read properties file
+  21 | 
+  22 | 
+  23 |     const properties1 = PropertyReader.readproperties('./config/global.properties');
+  24 |     console.log(properties1);
+> 25 |     Logger.info("Properties file is read...");
+     |            ^ TypeError: Cannot read properties of undefined (reading 'info')
+  26 |     Logger.info(properties1);
+  27 | 
+  28 | 
+  29 |     await page.goto(`${properties1.BaseURL}`);
+  30 |     Logger.info("goto.....")
+  31 |     //username
+  32 |     //password
+  33 |     //login button click
+  34 |     await page.waitForTimeout(5000);
+  35 |     await page.locator("#username").fill(`${userData[0].username}`);
+  36 |     Logger.info("username is entered");
+  37 |     await page.waitForTimeout(5000);
+  38 |     await page.locator("#password").fill(`${properties1.password}`);
+  39 |     Logger.info("password is entered");
+  40 |     await page.waitForTimeout(5000);
+  41 |     //await page.loccator("[type='submit']").click();f
+  42 |     //await page.waitForTimeout(5000);
+  43 |     await page.getByRole("button", { name: "sign in" }).click();
+  44 |     Logger.info("login button clicked");
+  45 |     await page.waitForTimeout(5000);
+  46 |     console.log(await page.title());
+  47 | 
+  48 | 
+  49 | });
+```
